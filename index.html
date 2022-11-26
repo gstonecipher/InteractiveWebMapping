@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>
+      NH-37 Hotspot Analysis App
+    </title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.16/esri/themes/light/main.css"></link>
+	<link rel="stylesheet" href="main.css" </link>
+	<script src="https://js.arcgis.com/4.16/"></script>
+	<script src="main.js"></script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+    <div id="welcome" class="modal">
+      <div class="modal-content">
+      <p> National Highway 37 (NH-37) connects northeastern Assam to the rest of India, providing passage for an average of 5,500 vehicles per day. For 60 km, NH-37 stretches along the southern border of Kaziranga National Park, one of India’s most biodiverse and important PAs. Kaziranga National Park provides habitat for Bengal tigers, Asian elephants, and two-thirds of the world’s one-horned rhinoceroses, as well as a diverse array of smaller mammals, reptiles, amphibians, and birds. </br></br> To better understand the impacts of the road on wildlife, researchers recorded observations of wildlife roadkills and live crossings along NH-37 from November 2018 to March 2020. Every observation was classified within three main categories: (1) monsoon (June–September) vs. dry season (October–May), (2) taxonomic type (meso-carnivore, herptile, primate, bird, ungulate, other mammal), and (3) animal status (dead, live near road, live crossing road). This app can be used to filter the data along these categories and identify hotspots. </p> </br>
+      <span class="close">View Map</span>
+    </div>
+  </div>
+
+    <div id="header" class="esri-widget">
+        <h1>Mapping Impacts to Wildlife Along NH-37 in Assam, India</h1>
+    </div>
+    <div id="inputDiv" class="esri-widget">
+      <p> Use the checkboxes and the 'Filter Data' button to update the map. At least one box in each category must be checked to see results. Some combinations might not contain any animals.</p>
+    </br>
+      <div>
+        <!-- Add all filter checkboxes - default value is checked -->
+        <p><b>Season</b></p>
+        <input type="checkbox" id="season1" name="season1" value="Season = 'Monsoon'" checked>
+        <label for="season1"> Monsoon </label></br>
+        <input type="checkbox" id="season2" name="season2" value="Season = 'Non-monsoon'" checked>
+        <label for="season2"> Not Monsoon </label></br>
+        </br>
+        <p><b>Status</b></p>
+        <input type="checkbox" id="status1" name="status1" value="AnimalStatus = 'Dead'" checked>
+        <label for="status1"> Dead </label></br>
+        <input type="checkbox" id="status2" name="status2" value="AnimalStatus = 'Alive Crossing Road'" checked>
+        <label for="status2"> Live Crossing Road </label></br>
+        <input type="checkbox" id="status3" name="status3" value="AnimalStatus = 'Alive Near Road'" checked>
+        <label for="status3"> Live Near Road </label> </br>
+        </br>
+        <p><b>Species</b></p>
+        <input type="checkbox" id="species1" name="species1" value="SpeciesCategory = 'Bird'" checked>
+        <label for="species1"> Bird </label></br>
+        <input type="checkbox" id="species2" name="species2" value="SpeciesCategory = 'Herptile'" checked >
+        <label for="species2"> Herptile </label></br>
+        <input type="checkbox" id="species3" name="species3" value="SpeciesCategory = 'Mesocarnivore'" checked>
+        <label for="species3"> Meso-Carnivore </label></br>
+        <input type="checkbox" id="species4" name="species4" value="SpeciesCategory = 'Other Mammal'" checked>
+        <label for="species4"> Other Mammal </label></br>
+        <input type="checkbox" id="species5" name="species5" value="SpeciesCategory = 'Primate'" checked>
+        <label for="species5"> Primate </label></br>
+        <input type="checkbox" id="species6" name="species6" value="SpeciesCategory = 'Ungulate'" checked>
+        <label for="species1"> Ungulate </label> </br>
+      </br>
+        <button class = "esri-widget" id="filterBtn"><b>Filter Data</b></button> </br>
+      </br>
+      <p><b>Display Options</b></p>
+        <button class = "vizButton active" id="dataBtn"><b>Show Data</b></button> </br>
+      </br>
+        <button class = "vizButton" id="heatmapBtn"><b>Show Heatmap</b></button> </br>
+      </br>
+        <button class = "vizButton" id= "clusterBtn"><b>Show Clusters*</b></button> </br>
+      </br>
+      <p class="small"> *The color of the cluster is based on which species category makes up the majority of observations.</p>
+      </div>
+    </div>
+  </body>
+
+</html>
